@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#fff3f5",
@@ -14,3 +15,10 @@
     "titleBar.inactiveForeground": "#15202b99"
   }
 }
+=======
+{  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--disable=missing-docstring,invalid-name"
+  ]
+}
+>>>>>>> jeff

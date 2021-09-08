@@ -1,0 +1,20 @@
+<h2>
+    {{user.name}} <a href="{% url 'user_edit' pk=user.pk %}">(edit)</a>
+    </h2>
+    <h4>
+    {{user.nationality}}
+    </h4>
+    
+    <img src="{{ user.photo_url }}" alt="" class="user-photo" />
+    <a href="{% url 'user_delete' pk=user.pk %}">Delete</a>
+    
+    <h3>goals <a href="">(+)</a></h3>
+    <ul>
+        {% for goal in user.goals.all %}
+        <li>
+            <a href="{% url 'goal_detail' pk=goal.pk %}">
+                {{ goal.title }} -- {{goal.album}} 
+            </a>
+        </li>
+        {% endfor %}
+    </ul>

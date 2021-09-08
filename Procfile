@@ -1,0 +1,1 @@
+web: gunicorn friendfunding_django.wsgi
