@@ -1,0 +1,21 @@
+app name: 
+friendfundingtest
+
+api key:
+06f206fa-099b-4c10-a6c5-17078886fd12
+
+api secret: 
+9755c611-707f-4a16-b038-096542939b96
+
+
+==============================
+
+LoginRaduis custom IDX: 
+https://friendfundingtest.hub.loginradius.com/auth.aspx?action=register&return_url=http://127.0.0.1:5000/
+
+
+http://127.0.0.1:5000/
+
+
+https://friendfundingtest.hub.loginradius.com/auth.aspx?action=register&return_url=http://127.0.0.1:5000/register
+
