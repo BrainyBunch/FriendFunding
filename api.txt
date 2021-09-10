@@ -17,5 +17,8 @@ https://friendfundingtest.hub.loginradius.com/auth.aspx?action=register&return_u
 http://127.0.0.1:5000/
 
 
-https://friendfundingtest.hub.loginradius.com/auth.aspx?action=register&return_url=http://127.0.0.1:5000/register
+https://friendfundingtest.hub.loginradius.com/auth.aspx?action=login&return_url=http://127.0.0.1:5000/login
 
+
+personal access token: 
+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
