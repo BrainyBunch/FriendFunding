@@ -6,6 +6,7 @@ class User(models.Model):
     description = models.TextField()
     amountsaved = models.IntegerField(default=0)
     
+    
     # We should make the user i guess just be information about the person right?
     # Like email. Phone number? Bio?
     print("The User Model")

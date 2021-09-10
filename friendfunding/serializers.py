@@ -15,7 +15,9 @@ class GoalSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(
         view_name='user_detail',
         read_only=True
+
     )
     class Meta:
         model = Goal
-        fields = ('user', 'description', 'cost', 'amountsaved', 'id', )
+        fields = ('user', 'description', 'cost', 'amountsaved', 'id')
+    

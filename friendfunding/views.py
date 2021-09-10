@@ -26,11 +26,6 @@ class GoalDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 
-
-
-
-
-
 # -------------------------------------------
 # LISTS
 # def user_list(request):
