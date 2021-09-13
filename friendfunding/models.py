@@ -13,6 +13,7 @@ class User(models.Model):
         return self.name
 
 class Goal(models.Model):
+    title = models.CharField(max_length=100, default='none')
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
