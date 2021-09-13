@@ -1,0 +1,29 @@
+{% if messg %}
+<script>
+  alert("{{ messg }}");
+</script>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signUp</title>
+  </head>
+  <body>
+    <h1>this is the sign up route</h1>
+    <form action="postsignup" method="POST">
+      {% csrf_token %} {{form.as_p}} Email : Name:
+      <input type="text" placeholder="Jane Doe" name="name" />
+      Email:
+      <input type="email" placeholder="janedoe@mail.com" name="email" />
+      Password :
+      <input type="password" placeholder="12345678" name="password" />
+      Re-enter Password:
+      <input type="password" placeholder="12345678" name="confirm_password" />
+      <input type="submit" value="signUp" />
+    </form>
+  </body>
+</html>
