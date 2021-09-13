@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Create</title>
+  </head>
+  <body>
+    <form action="postcreate" method="POST">
+      {% csrf_token%} Goal Name:
+      <input type="text" placeholder="Hawaii" name="goal" required />
+      <textarea rows="5" cols="40" name="description"> </textarea>
+      How Much Do You Need To Save?
+      <input type="text" placeholder="$10,000" name="price" required />
+      <input type="text" placeholder="$1,000" name="saved" />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
