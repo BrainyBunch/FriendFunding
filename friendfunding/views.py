@@ -3,26 +3,36 @@ from django.http import JsonResponse
 from .models import User, Goal
 from .forms import UserForm, GoalForm
 from rest_framework import generics
+from rest_framework import permissions
+
 
 from .serializers import UserSerializer, GoalSerializer
 
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [permissions.AllowAny]
+
 
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [permissions.AllowAny]
+
 
 class GoalList(generics.ListCreateAPIView):
     queryset = Goal.objects.all()
     serializer_class = GoalSerializer
+    permission_classes = [permissions.AllowAny]
+
 
 
 class GoalDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Goal.objects.all()
     serializer_class = GoalSerializer
+    permission_classes = [permissions.AllowAny]
+
 
 
 
