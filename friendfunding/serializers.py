@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
     )
     class Meta:
         model = User
-        fields = ('name', 'amountsaved', 'description', 'goal','id')
+        fields = ('name', 'amountsaved', 'description', 'goal','id','email')
 
 class GoalSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(
@@ -18,4 +18,4 @@ class GoalSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Goal
-        fields = ('user', 'description', 'cost', 'amountsaved', 'id', )
+        fields = ('user', 'description', 'cost', 'amountsaved', 'title','id')
