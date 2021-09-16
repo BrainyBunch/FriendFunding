@@ -9,4 +9,5 @@ class UserForm(forms.ModelForm):
 class GoalForm(forms.ModelForm):
     class Meta:
         model = Goal
-        fields = ('description', 'cost', 'amountsaved', 'user')
+        fields = ('title', 'description', 'cost', 'amountsaved', 'user')
+
