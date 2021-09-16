@@ -4,10 +4,8 @@
 <ul>
   {% for goal in goal %}
   <li>
-    <a href="{% url 'goal_detail' pk=goal.pk %}">
-      {{ goal.description }} <br />
-    </a>
-    Associated Users: {{ goal.user }}
+    <a href="{% url 'goal_detail' pk=goal.pk %}"> {{ goal.title }} <br /> </a>
+    Creator: {{ goal.user }}
   </li>
   {% endfor %}
 </ul>

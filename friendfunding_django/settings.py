@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'friendfunding',
     'django_extensions',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
     
 
 ]

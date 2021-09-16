@@ -8,6 +8,8 @@
     <h2>Amount Saved: {{ goal.amountsaved }}</h2>
     <h2>Total Cost: {{ goal.cost }}</h2>
 </ul>
+<a target="_blank" class="button"
+href="{% url 'random' %}"> How much will you save?</a>
 <a href="{% url 'goal_delete' pk=goal.pk %}">Delete</a>
 
 
