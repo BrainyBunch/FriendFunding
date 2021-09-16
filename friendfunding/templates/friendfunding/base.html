@@ -5,14 +5,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tunr</title>
+    <title>Friend-Funding</title>
     <link rel="stylesheet" href="{% static 'css/friendfunding.css' %}" />
   </head>
   <body>
-    <h1>FriendFunding</h1>
     <nav>
-      <a href="/">Users</a>
-      <a href="/goal">Goals</a>
+      <ul class="ulNav">
+        <li class="liNav"><a href="/" class="aNav">Users</a></li>
+        <li class="liNav"><a href="/goal" class="aNav">Goals</a></li>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+          </filter>
+        </svg>
+        <li class="liNav" id="titleNav">
+          <span filter-content="S">Friend Funding</span>
+        </li>
+      </ul>
     </nav>
     {% block content %} {% endblock %}
   </body>
