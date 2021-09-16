@@ -66,7 +66,7 @@ def postsignup(request):
         data = {"name": name, "status":"1"}
         database.child("users").child(uid).child("details").set(data)
 
-        return render(request,'welcome2.html', {"e": email})
+        return render(request,'login.html')
     elif(password != confirm_password):
         message = "Password was not entered correctly!"
         return render(request, "signup.html", {"messg":message})
