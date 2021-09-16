@@ -1,13 +1,13 @@
-{% extends 'friendfunding/base.html' %}  {% block content %}
+{% extends 'friendfunding/base.html' %} {% block content %}
 
-<h2>User <a href="{%url 'user_create' %}">(+)</a> </h2>
-<h2>Goal <a href="{%url 'goal_create' %}">(+)</a> </h2>
+<h2>Goals <a href="{%url 'goal_create' %}">+</a></h2>
 <ul>
-  {% for goal in Goals %}
+  {% for goal in goal %}
   <li>
     <a href="{% url 'goal_detail' pk=goal.pk %}">
-        {{ goal.description }}
+      {{ goal.description }} <br />
     </a>
+    Associated Users: {{ goal.user }}
   </li>
   {% endfor %}
 </ul>

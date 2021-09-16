@@ -5,7 +5,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     amountsaved = models.IntegerField(default=0)
-    email= models.CharField(max_length=100, default='none') 
+
     # We should make the user i guess just be information about the person right?
     # Like email. Phone number? Bio?
     print("The User Model")
@@ -13,13 +13,13 @@ class User(models.Model):
         return self.name
 
 class Goal(models.Model):
-    email= models.CharField(m)
-    title = models.CharField(max_length=100, default='none')
+    title = models.CharField(max_length=100, default='')
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name='goal',
     )
+    # user = models.ManyToManyField
     description = models.TextField()
     cost = models.IntegerField(default=0)
     amountsaved = models.IntegerField(default=0)
