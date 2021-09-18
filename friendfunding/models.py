@@ -28,7 +28,7 @@ class Goal(models.Model):
     # Would want to pull the amount saved from each user.... 
     print("The Goal Model")
     def __str__(self):
-        return self.title
+        return self.title 
 
 
 

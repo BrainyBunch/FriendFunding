@@ -1,16 +1,18 @@
 {% extends 'friendfunding/base.html' %} {% block content %}
 
-<h2>{{goal.user}}</h2>
-
-<h2>Goal: <a href="{% url 'goal_edit' pk=goal.pk %}">Edit</a> </h2>
+<h2 class="goalTitle">~~~~~ {{goal.title}} ~~~~~</h2>
+<h2 class="user">{{goal.user}}</h2>
+<a href="{% url 'goal_edit' pk=goal.pk %}" class="editButton">Edit</a>
 <ul>
-    <h2>Description: {{ goal.description }}</h3>
-    <h2>Amount Saved: {{ goal.amountsaved }}</h2>
-    <h2>Total Cost: {{ goal.cost }}</h2>
+  <h2 class="goalDetail">Description: {{ goal.description }}</h2>
+  <h2 class="goalDetail">Total Cost: {{ goal.cost }}</h2>
+  <h2 class="goalDetail">Amount Saved: {{ goal.amountsaved }}</h2>
 </ul>
-<a target="_blank" class="button"
-href="{% url 'random' %}"> How much will you save?</a>
-<a href="{% url 'goal_delete' pk=goal.pk %}">Delete</a>
+<a class="button" href="{% url 'random' pk=goal.pk%}" id="saveButton">
+  How much will you save?</a
+>
 
+<!-- <h3>{{newGoal}}</h3> -->
+<a href="{% url 'goal_delete' pk=goal.pk %}" class="deleteButton">Delete</a>
 
 {% endblock %}

@@ -6,6 +6,7 @@ from rest_framework import generics
 from rest_framework import permissions
 import random
 
+
 randomFunc = random
 # from .serializers import UserSerializer, GoalSerializer
 
@@ -38,7 +39,7 @@ randomFunc = random
 # -------------------------------------------
 # LISTS
 def user_list(request):
-    user = User.objects.all()
+    user = User.objects.all( )
     user = user.order_by('name')
     return render(
         request, 
@@ -71,48 +72,36 @@ def user_detail(request, pk):
 
 #  ========== making a array global to pass saved amount 
 
-goal_saved = []
-new_saved = []
 
 def goal_detail(request, pk):
     goal = Goal.objects.get(id=pk)
-    goal_saved.append(goal.amountsaved)
-    print('===========')
-    print(goal_saved)
     return render(request, 'friendfunding/goal_detail.html', {'goal': goal})
 
 # # ------------------------------------------
 
 # # RANDOM BUTTON GENERATOR 
-def random(request):
-    randArray = []
+def random(request, pk):
+    goalInfo = Goal.objects.get(id=pk)
+    saved = goalInfo.amountsaved
     number = randomFunc.randint(1,50)
-    randArray.append(number)
-    saved = goal_saved
 
-    third = sum(randArray + saved)
-    new_saved.append(third)
-
-    print('====random number===')
-    print(randArray)
-    print('====saved number===')
+    print('=============')
     print(saved)
-    print('====total=====')
-    print(new_saved)
+    print('=============')
+    print(number)
+    print('=============')
+    print(goalInfo)
+
+    sum = saved + number
+
+    print('=============')
+    print(sum)
+
+    goalInfo.amountsaved = sum
+    goalInfo.save()
 
 
-    goal_saved.pop()
-    # goal_saved.pop()
-    # goal_saved.pop()
-    new_saved.pop()
-    # new_saved.pop()
-    # new_saved.pop()
-
-    # output = number + saved
-    # new_saved.append(output)
-    
-    # print(output)
-    return render(request, "friendfunding/random.html", {'random':randArray, 'total': third})
+    return render(request, "friendfunding/goal_detail.html", {"goal": goalInfo})
 # # -------------------------------------------
 # # CREATE
 def user_create(request):

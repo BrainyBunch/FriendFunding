@@ -1,12 +1,16 @@
-{% extends 'friendfunding/base.html' %}  {% block content %}
+{% extends 'friendfunding/base.html' %} {% block content %}
 
-<h2>User <a href="{%url 'user_create' %}">(+)</a> </h2>
-
-<ul>
-    {% for user in Users %}
-    <li>
-        <a href="{% url 'user_detail' pk=user.pk %}">{{ user.name }}</a>
-    </li>
-    {% endfor %}
+<h2 class="userTitle">~~~~~ User ~~~~~</h2>
+<a href="{%url 'user_create' %}" class="userButton">Add User</a>
+<ul class="ulUsers">
+  {% for user in Users %}
+  <div class="userDiv">
+    <p class="userList">
+      <a class="userName" href="{% url 'user_detail' pk=user.pk %}"
+        >{{ user.name }}</a
+      >
+    </p>
+  </div>
+  {% endfor %}
 </ul>
 {% endblock %}
