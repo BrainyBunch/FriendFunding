@@ -1,9 +1,10 @@
-{% extends 'friendfunding/base.html' %}  {% block content %}
+{% extends 'friendfunding/base.html' %} {% block content %}
 
-<h1>New Goal</h1>
+<h1 class="goalFormTitle">~~~~~~~~ New Goal ~~~~~~~~</h1>
 <form method="POST" class="goal-form">
-    {% csrf_token %} {{form.as_p}}
-    <button type="submit" class="save btn btn-default">Save</button>
+  {% csrf_token %} {{form.as_p}}
+
+  <button type="submit" class="save btn btn-default">Save</button>
 </form>
 
 {% endblock %}

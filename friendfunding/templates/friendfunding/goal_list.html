@@ -1,11 +1,18 @@
 {% extends 'friendfunding/base.html' %} {% block content %}
 
-<h2>Goals <a href="{%url 'goal_create' %}">+</a></h2>
-<ul>
+<h2 class="goalsh2">~~~~~ Goals ~~~~~</h2>
+<a href="{%url 'goal_create' %}" class="goalCreate">Add a Goal</a>
+<ul class="tilesWrap">
   {% for goal in goal %}
   <li>
-    <a href="{% url 'goal_detail' pk=goal.pk %}"> {{ goal.title }} <br /> </a>
-    Creator: {{ goal.user }}
+    <h2>$</h2>
+    <a href="{% url 'goal_detail' pk=goal.pk %}"> {{ goal.title }}</a>
+    <p class="creator">Creator: {{ goal.user }}</p>
+    <button>
+      <a class="aButt" href="{% url 'goal_detail' pk=goal.pk %}"
+        >Saved: {{goal.amountsaved}}</a
+      >
+    </button>
   </li>
   {% endfor %}
 </ul>

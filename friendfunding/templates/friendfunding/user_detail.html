@@ -1,10 +1,12 @@
 {% extends 'friendfunding/base.html' %} {% block content %}
 
-<h2>{{user.name}} <a href="{% url 'user_edit' pk=user.pk %}">Edit</a></h2>
-<h2>Description: {{user.description}}</h2>
-<h2>Amount Saved: {{user.amountsaved}}</h2>
-<img src="{{ user.photo_url }}" alt="" class="user-photo" />
-<a href="{% url 'user_delete' pk=user.pk %}">Delete</a>
+<h2 class="goalTitle">{{user.name}}</h2>
+<a href="{% url 'user_edit' pk=user.pk %}" class="editButton">Edit</a>
+
+<h2 class="goalDetail">Description: {{user.description}}</h2>
+<h2 class="goalDetail">Amount Saved: {{user.amountsaved}}</h2>
+
+<a href="{% url 'user_delete' pk=user.pk %}" class="deleteButton">Delete</a>
 
 <!-- <h3>Goals <a href="">(+)</a></h3> -->
 <ul>

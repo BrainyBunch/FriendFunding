@@ -1,7 +1,6 @@
 body {
   background-color: whitesmoke;
 }
-
 /* ======== NAV BAR CSS */
 .ulNav {
   background-color: #215f94;
@@ -11,139 +10,332 @@ body {
 .liNav {
   display: inline;
 }
-span {
-  color: white;
-  float: right;
-  position: relative;
-  font-family: "Avenir Next", sans-serif;
-  font-weight: 900;
-  font-size: 32px;
-  text-transform: uppercase;
-  font-style: italic;
-  letter-spacing: 0.05em;
-}
-span::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: attr(filter-content);
-
-  filter: url(#motion-blur-filter);
-}
-svg {
-  display: none;
+li .liNav {
+  text-align: center;
 }
 .aNav {
   color: white;
   padding: 0px 15px;
   text-decoration: none;
   font-size: large;
+  display: inline;
+}
+.navTabs {
+  text-align: center;
+  list-style: none;
 }
 li .aNav:hover {
   background-color: #3d95e0;
-  padding: 15px;
+  padding: 8px;
   color: #53e086;
   text-shadow: 3px 3px #3e945d;
 }
-
-/* 
-
-
-body {
-    font-family: "Helvetica Neue", sans-serif;
-    max-width: 50em;
-    margin: auto;
-    padding: 2em 1em;
+.idNav {
+  text-align: right;
+  margin: 0;
+}
+.creator {
+  text-align: left;
+}
+div {
+  color: #fff;
+  font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+div span {
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500;
+  -webkit-font-smoothing: antialiased;
+}
+div span::before,
+div span::after {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  transform-origin: left top;
+  transition: all ease-out 0.3s;
+  content: attr(data-text);
+}
+div span::before {
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+div span::after {
+  z-index: 2;
+  color: #53e086;
+  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0, 0, 0, 0.8);
+  transform: rotateY(-40deg);
+}
+div span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+div span:hover::after {
+  transform: rotateY(-10deg);
+}
+div span + span {
+  margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+  div {
+    font-size: 2em;
   }
-  
-  nav a {
-    border: 1px solid black;
-    margin: 0.5em;
-    padding: 0.5em;
-    background-color: #eeeeee;
-  }
-  
-  nav a:hover {
-    background-color: orange;
-    color: blue;
-  }
-  
-  a,
-  a:visited {
-    text-decoration: none;
-    color: blue;
-  }
-  
-  a:hover {
-    background-color: #ccc;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  li {
-    margin: 0.25em;
-  }
-  
-  h1 {
-    font: inherit;
-    color: inherit;
-    letter-spacing: -0.05em;
-    text-decoration: none;
-    border-bottom: 1px solid black;
-  }
-  
-  h2 > a {
-    font-size: 0.75em;
-  }
-  
-  input {
+  div span::before,
+  div span::after {
     display: block;
-    margin: 5px 0 20px 0;
-    padding: 9px;
-    border: solid 1px black;
-    width: 300px;
-    background: whitesmoke;
   }
-  
-  input[type="submit"],
-  a.delete {
-    width: auto;
-    padding: 9px 15px;
-    background-color: gray;
-    border: 0;
-    font-size: 14px;
-    color: #ffffff;
+}
+@media only screen and (max-width: 1000px) {
+  div {
+    font-size: 30px;
   }
-  
-  a.delete {
-    background-color: red;
+}
+@media only screen and (max-width: 800px) {
+  div {
+    font-size: 15px;
   }
-  
-  .artist-photo {
-    width: 400px;
-  }
-  
-  span.nationality {
-    font-size: 0.5em;
-  }
-  
-  .user-info {
-    float: right;
-  }
-  
-  a.fav {
-    text-decoration: none;
-    color: red;
-  }
-  
-  a.no-fav {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .fav:visited,
-  .no-fav:visited {
-    text-decoration: none;
-  } */
+}
+/* ================= GOAL LIST HTML */
+.goalsh2 {
+  font-family: "Lobster", cursive;
+  font-size: 35px;
+  text-align: center;
+  color: #f0824b;
+  text-shadow: 1px 1px #9c5712;
+}
+.tilesWrap {
+  padding: 0;
+  margin: 50px auto;
+  list-style: none;
+  text-align: center;
+}
+.tilesWrap li {
+  display: inline-block;
+  width: 20%;
+  min-width: 100px;
+  max-width: 130px;
+  padding: 60px 20px 40px;
+  position: relative;
+  vertical-align: top;
+  margin: 10px;
+  font-family: "Fjalla One", sans-serif;
+  height: 20vh;
+  background: #53e086;
+  border: 1px solid #47c074;
+  text-align: left;
+}
+.tilesWrap li h2 {
+  font-size: 70px;
+  margin: 0;
+  position: absolute;
+  opacity: 0.2;
+  top: 50px;
+  right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.tilesWrap li a {
+  font-size: 30px;
+  color: #e07947;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-family: "Lobster", cursive;
+}
+.tilesWrap li p {
+  font-size: 20px;
+  line-height: 18px;
+  color: #e07947;
+  margin-top: 5px;
+  font-family: "Amatic SC", cursive;
+}
+.tilesWrap li button {
+  background: transparent;
+  border: 1px solid #e07947;
+  padding: 10px 20px;
+  color: #c76535;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-40px);
+  opacity: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+.tilesWrap li button:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  background: #f68c56d7;
+  top: 0;
+  opacity: 0;
+  left: -140px;
+  border-radius: 0 20px 20px 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+.tilesWrap li:hover button {
+  transform: translateY(5px);
+  opacity: 1;
+}
+.tilesWrap li button:hover {
+  color: #8b4623;
+}
+.tilesWrap li button:hover:before {
+  left: 0;
+  opacity: 1;
+}
+.tilesWrap li:hover h2 {
+  top: 0px;
+  opacity: 0.6;
+}
+.tilesWrap li:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: #fff;
+  transform: skew(2deg, 2deg);
+}
+.tilesWrap li:after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(133, 119, 31, 0.13);
+}
+.tilesWrap li:before {
+  background: #c21500;
+  background: -webkit-linear-gradient(to right, #ff8a05e5, #c21300e1);
+  background: linear-gradient(to right, #ff8a05e5, #c21300e1);
+}
+.tilesWrap li button .aButt {
+  font-size: 15px;
+}
+.goalCreate {
+  background-color: #53e086;
+  border: 2px solid #e07947;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ======================== GOAL/USER FORM HTML */
+
+input,
+label {
+  display: block;
+}
+label {
+  color: #e07947;
+  font-size: 30px;
+  font-family: "Amatic SC", cursive;
+}
+.goalFormTitle {
+  font-family: "Lobster", cursive;
+  color: #53e086;
+  text-shadow: 2px 2px #3e945d;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 0%;
+}
+button.save.btn.btn-default {
+  background-color: #53e086;
+  border: 2px solid #e07947;
+  color: #e07947;
+}
+
+/* ==================== USER LIST  HTML */
+
+.userTitle {
+  /* font-family: "Lobster", cursive;
+  color: #53e086;
+  text-shadow: 2px 2px #3e945d;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 0%; */
+  font-family: "Avenir Next", sans-serif;
+  font-size: 35px;
+  text-align: center;
+  color: #e07947;
+}
+
+p a {
+  margin: 0px 35px;
+  text-decoration: none;
+  font-family: "Amatic SC", cursive;
+  display: inline;
+  font-size: 30px;
+}
+
+.userList {
+  display: inline;
+}
+
+.userButton {
+  background-color: #53e086;
+  text-decoration: none;
+  border: 2px solid #e07947;
+  color: #e07947;
+}
+/* -------------------------- */
+.ulUsers {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ==================== GOAL / USER DETAIL HTML */
+h2.user {
+  color: #f79533;
+}
+h2.goalTitle {
+  font-family: "Lobster", cursive;
+  color: #53e086;
+  text-shadow: 2px 2px #3e945d;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 0%;
+}
+
+.deleteButton,
+#saveButton,
+.editButton {
+  background-color: #53e086;
+  text-decoration: none;
+  border: 2px solid #e07947;
+  color: #e07947;
+}
+.goalDetail {
+  color: #e07947;
+  font-family: "Amatic SC", cursive;
+  font-size: 35px;
+}
+
+p a {
+  background-color: transparent;
+  border: #f79533 2px solid;
+  margin: 5px;
+  padding: 5px;
+}
+.userName {
+  color: #f79533;
+}
+
+p a:hover {
+  border: 5px double #c21500;
+}
+.userDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
