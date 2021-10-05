@@ -21,10 +21,10 @@
 	Our app is set to be a fun and competitive way of saving money with friends or family.  The user can save money for whatever they desire, whether it be a new console, a house, or even a trip.  It becomes a game between a group you choose, whoever can pick the lowest number to save that given time!  How much do you think you’d have to put away?  Will you put away the biggest number?? 
 
 ## Technology Used: 
-- React 
-- CSS
-- FireBase/ Dynamic Links 
-- Passport/ Auth0
+- Django 
+- HTML
+- CSS 
+- Heroku
 
 ## How To Install The App: 
 - Fork and Clone and run npm i
